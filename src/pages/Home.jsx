@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import DataBoxes from "../Components/DataBoxes";
 import Input from "../Components/Input";
 import PieCharts from "../Components/PieCharts";
+import AddData from "../Components/Display";
 
 const Home = () => {
   const chartData = {
@@ -13,15 +14,20 @@ const Home = () => {
   };
   return (
     <div className="home">
-      <div className="left">
-        <Navbar />
-        <div className="upper">
-          <DataBoxes />
-          <Input />
+      <div className="first">
+        <div className="left">
+          <Navbar />
+          <div className="upper">
+            <DataBoxes />
+            <Input />
+          </div>
+        </div>
+        <div className="right">
+          <PieCharts data={chartData} />
         </div>
       </div>
-      <div className="right">
-        <PieCharts data={chartData} />
+      <div className="second">
+        <AddData />
       </div>
     </div>
   );

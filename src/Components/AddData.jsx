@@ -1,12 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-const Input = () => {
+const AddData = () => {
   const [concern, setConcern] = useState("");
 
   const handleSubmit = async (e) => {
     console.log(concern);
+    e.preventDefault();
 
     try {
       const response = await axios.post("https://taxman-backend.onrender.com", {
@@ -20,21 +20,25 @@ const Input = () => {
       console.error("Error adding data:", error); // Handle error
     }
   };
+
   return (
-    <div className="input">
-      <h1 className="generate">Generate New Ticket</h1>
-      <input
-        type="text"
-        className="input-box"
-        placeholder="Write your concern here ..."
-        value={concern}
-        onChange={(e) => setConcern(e.target.value)}
-      />
-      <button className="submit" onClick={handleSubmit}>
-        submit
-      </button>
+    <div>
+      <h1>Add Student</h1>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="det">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={concern}
+            onChange={(e) => setConcern(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Add Student</button>
+      </form>
     </div>
   );
 };
 
-export default Input;
+export default AddData;

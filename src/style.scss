@@ -6,9 +6,37 @@
  
 .home{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: left; 
-        gap: 150px;   
+        .recent{
+            margin-left: 20px;
+            font-family: monospace;
+        }
+        .concern-detail{
+            display: flex;
+            align-items: center;
+            border: 2px solid rgb(233, 112, 112);
+            width: 700px; 
+            margin-left: 20px;
+            border-radius: 20px;
+            padding: 10px;
+            .concern{
+            font-size: 30px;
+            font-family: monospace;
+            font-weight: 900;
+
+        }
+        .p{
+            font-size: 20px;
+            font-family: monospace;
+        }
+    }
+       
+        
+        .first{
+            display: flex;
+            gap: 150px;
+        }
          
         canvas{
             height: 300px;
@@ -28,6 +56,7 @@
             .input{
                 display: flex;
                 flex-direction: column;
+                margin-left: 23px;
                 gap: 10px;
                 .submit{
                     padding: 10px;
@@ -113,4 +142,8 @@
              
         }
     }
+}
+
+.no{
+    margin-left: 21px;
 }
